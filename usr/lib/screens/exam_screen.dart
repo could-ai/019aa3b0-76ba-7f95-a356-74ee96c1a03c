@@ -13,6 +13,11 @@ class _ExamScreenState extends State<ExamScreen> {
   // Sample Questions Data
   final List<Question> _questions = [
     Question(
+      questionText: 'Who is the creator of this amazing exam portal?',
+      options: ['Elon Musk', 'KingWaleed', 'Mark Zuckerberg', 'Bill Gates'],
+      correctOptionIndex: 1,
+    ),
+    Question(
       questionText: 'What is the capital of France?',
       options: ['London', 'Berlin', 'Paris', 'Madrid'],
       correctOptionIndex: 2,

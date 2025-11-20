@@ -21,61 +21,81 @@ class HomeScreen extends StatelessWidget {
             colors: [Colors.indigo.shade50, Colors.white],
           ),
         ),
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(
-                  Icons.school,
-                  size: 100,
-                  color: Colors.indigo,
-                ),
-                const SizedBox(height: 32),
-                const Text(
-                  'Welcome to KingWaleed Exam Portal',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.indigo,
+        child: Column(
+          children: [
+            Expanded(
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(
+                        Icons.school,
+                        size: 100,
+                        color: Colors.indigo,
+                      ),
+                      const SizedBox(height: 32),
+                      const Text(
+                        'Welcome to KingWaleed Exam Portal',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.indigo,
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      const Text(
+                        'Test your knowledge with our curated exams.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      const SizedBox(height: 48),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const ExamScreen()),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.amber,
+                          foregroundColor: Colors.indigo.shade900,
+                          padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 16),
+                          textStyle: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        child: const Text('Start Exam'),
+                      ),
+                    ],
                   ),
                 ),
-                const SizedBox(height: 16),
-                const Text(
-                  'Test your knowledge with our curated exams.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.grey,
-                  ),
-                ),
-                const SizedBox(height: 48),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const ExamScreen()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.amber,
-                    foregroundColor: Colors.indigo.shade900,
-                    padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 16),
-                    textStyle: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                  child: const Text('Start Exam'),
-                ),
-              ],
+              ),
             ),
-          ),
+            // Footer
+            Container(
+              padding: const EdgeInsets.all(16),
+              color: Colors.indigo.withOpacity(0.05),
+              width: double.infinity,
+              child: const Text(
+                '© 2024 KingWaleed Technologies. All rights reserved.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 12,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
